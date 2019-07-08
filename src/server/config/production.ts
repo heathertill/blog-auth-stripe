@@ -11,5 +11,8 @@ export default {
     },
     auth: {
         secret: process.env.SECRET
+    },
+    stripe: {
+        apiKey: process.env.APIKEY
     }
 };
