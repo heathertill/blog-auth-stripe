@@ -1,11 +1,10 @@
-import * as express from 'express';
-import stripeLoader from 'stripe';
+import * as stripeLoader from 'stripe';
 
 import config from '../../config';
 
 const stripe = new stripeLoader(config.stripe.apiKey);
 
-const charge = (token: string, amt: number) => {
+ const charge = (token: string, amt: number) => {
     return stripe.charges.create({
         amount: amt * 100,
         currency: 'usd',
@@ -14,5 +13,5 @@ const charge = (token: string, amt: number) => {
     });
 };
 
-export  {charge} ;
+export  { charge } ;
 

@@ -1,23 +1,28 @@
 import * as React from 'react';
 import { StripeProvider, Elements } from 'react-stripe-elements';
-import { RouteComponentProps } from 'react-router';
 
 import Form from './Form';
 
-export interface IDonateProps extends RouteComponentProps<{}> { }
+interface IDonateProps  { }
 
-const Donate: React.SFC<IDonateProps> = () => {
+interface IDonateState { }
 
+export default class Donate extends React.Component<IDonateProps, IDonateState> {
 
-    return (
-        <main className="container fromTheDonate">
-            <StripeProvider apiKey="pk_test_aY4tBDlLDE9vshY5LMZqV2gv00ifjC92sB">
-                <Elements>
-                    <Form />
-                </Elements>
-            </StripeProvider>
-        </main>
-    );
-}
+    constructor(props: IDonateProps) {
+        super(props);
+    }
 
-export default Donate;
+    render() {
+        return (
+            <main className="container">
+                <StripeProvider apiKey="pk_test_aY4tBDlLDE9vshY5LMZqV2gv00ifjC92sB">
+                    <Elements>
+                        <Form />
+                    </Elements>
+                </StripeProvider>
+            </main>
+        );
+    }
+};
+
