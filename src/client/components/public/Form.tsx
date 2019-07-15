@@ -88,4 +88,6 @@ interface IFormState {
     // _element: any
 }
 
+// higher order component takes the form and return a new 
+// version of itself that is injected with extra props i.e props.charge
 export default injectStripe(Form);
